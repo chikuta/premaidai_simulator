@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>premaidai_gazebo</name>
+  <version>0.0.0</version>
+  <description>The premaidai_gazebo package</description>
+
+  <maintainer email="chikuta@todo.todo">t_chiku</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <!-- <exec_depend>premaidai_gazebo_plugins</exec_depend> -->
+
+  <export>
+  </export>
+</package>

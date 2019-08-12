@@ -1,0 +1,3 @@
+- git: {local-name: "src/premaidai_description", uri: "https://github.com/chikuta/premaidai_description"}
+- git: {local-name: "src/premaidai_ros_bridge", uri: "https://github.com/chikuta/premaidai_ros_bridge"}
+- git: {local-name: "src/premaidai_simulator", uri: "https://github.com/chikuta/premaidai_simulator"}

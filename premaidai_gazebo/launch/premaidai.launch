@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <launch>
   <include file="$(find premaidai_description)/launch/upload_premaidai.launch"/>
-  <node name="spawn_premaidai_model" pkg="gazebo_ros" type="spawn_model" args="-x 0 -y 0 -z 0.3 -unpause -urdf -param robot_description -model premaidai" respawn="false" output="screen" />
+  <node name="spawn_premaidai_model" pkg="gazebo_ros" type="spawn_model" args="-x 0 -y 0 -z 0.25  -unpause -urdf -param robot_description -model premaidai" respawn="false" output="screen" />
 </launch>

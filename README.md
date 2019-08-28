@@ -18,10 +18,20 @@
 
 ## How to launch
 
+### Launch simulator
+
 ```bash
   $ cd ws
   $ source devel/setup.bash
   $ roslaunch premaidai_gazebo premaidai_empty_world.launch
+```
+
+### Launch simulator with rviz control gui
+
+```bash
+  $ cd ws
+  $ source devel/setup.bash
+  $ roslaunch premaidai_gazebo rviz_control.launch
 ```
 
 ## TODO

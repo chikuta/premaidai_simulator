@@ -32,6 +32,7 @@
 ## Referes
 
 * [drcsim](https://bitbucket.org/osrf/drcsim/src/default/)
+* [Setting Velocity on Joints and Links](http://gazebosim.org/tutorials?tut=set_velocity)
 
 ## LICENSE
 MIT

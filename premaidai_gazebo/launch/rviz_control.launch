@@ -6,14 +6,17 @@
 
   <!--include-->
   <include file="$(find premaidai_gazebo)/launch/premaidai_empty_world.launch"/>
-  <remap from="/gazebo/joint_command" to="/joint_states"/>
 
   <!-- load robot -->
   <param name="robot_description" command="$(find xacro)/xacro.py '$(find premaidai_description)/robots/$(arg robot).urdf.xacro'" />
 
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="rate" value="5" />
+    <remap from="/joint_states" to="/joint_command"/>
+    <param name="rate" value="5"/>
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <remap from="/joint_states" to="/joint_command"/>
   </node>
 
   <!-- load displays -->

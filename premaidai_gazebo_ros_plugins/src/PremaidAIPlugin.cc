@@ -66,7 +66,8 @@ void PremaidAIPlugin::Load(physics::ModelPtr parent, sdf::ElementPtr sdf)
   node_handle_ = ros::NodeHandlePtr(new ros::NodeHandle(""));
 
   // setup topics
-  joint_command_sub_ = node_handle_->subscribe<sensor_msgs::JointState>("joint_states", 10, &PremaidAIPlugin::JointCommandCallback, this);
+  joint_command_sub_ = node_handle_->subscribe<sensor_msgs::JointState>("joint_command", 10, &PremaidAIPlugin::JointCommandCallback, this);
+  joint_states_pub_ = node_handle_->advertise<sensor_msgs::JointState>("joint_states", 5);
 }
 
 // virtual
@@ -95,6 +96,17 @@ void PremaidAIPlugin::OnUpdate()
       ROS_INFO("[%s] joint is not found.", name.c_str());
     }
   }
+
+  // collect joint info for joint_state
+  sensor_msgs::JointState joint_state;
+  for (JointPtrMap::iterator it = joint_map_.begin(); it != joint_map_.end(); ++it)
+  {
+    joint_state.name.push_back(it->second->GetName());
+    joint_state.position.push_back(it->second->Position(0));
+    joint_state.velocity.push_back(it->second->GetVelocity(0));
+    joint_state.effort.push_back(it->second->GetForce(0));
+  }
+  joint_states_pub_.publish(joint_state);
 
   joint_controller_->Update();
 }

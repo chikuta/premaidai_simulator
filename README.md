@@ -24,11 +24,6 @@
   $ roslaunch premaidai_gazebo premaidai_empty_world.launch
 ```
 
-## TODO
-
-- [ ] gazebo plugin 作成
-- [ ] simulatorパラメータ調整（現在はDRCSim仕様）
-
 ## Referes
 
 * [drcsim](https://bitbucket.org/osrf/drcsim/src/default/)

@@ -11,7 +11,7 @@
   $ mkdir -p ws/src
   $ cd ws
   $ catkin init
-  $ wget https://raw.githubusercontent.com/chikuta/premaidai_ros_bridge/master/premaidai_simulator.rosinstall .rosinstall
+  $ wget https://raw.githubusercontent.com/chikuta/premaidai_simulator/master/premaidai_simulator.rosinstall .rosinstall
   $ rosinstall .
   $ catkin build
 ```
